@@ -30,7 +30,7 @@ export class AccountEditComponent implements OnInit {
           if (account) {
             this.account = account;
             this.account.href = account._links.self.href;
-            this.giphyService.get(account.firstName).subscribe(url => account.giphyUrl = url);
+        //    this.giphyService.get(account.firstName).subscribe(url => account.giphyUrl = url);
           } else {
             console.log(`account with id '${id}' not found, returning to list`);
             this.gotoList();
