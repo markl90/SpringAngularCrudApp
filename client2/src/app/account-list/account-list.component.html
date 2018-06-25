@@ -1,0 +1,29 @@
+
+
+
+
+<mat-card>
+  <mat-card-header><h2>Account List</h2></mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let account of accounts">
+
+        <!-- <h3 mat-line>{{account.firstName}}{{account.lastName}}</h3> -->
+        <mat-form-field>
+        <input matInput disabled placeholder="First Name" [(ngModel)]="account.firstName">
+        </mat-form-field>
+        <mat-form-field>
+        <input matInput disabled placeholder="Last Name" [(ngModel)]="account.lastName">
+        </mat-form-field>
+        <mat-form-field>
+        <input matInput disabled placeholder="Account Number" [(ngModel)]="account.accountNumber">
+      </mat-form-field>
+        <!-- <h3 mat-line> -->
+
+          <a mat-button [routerLink]="['/account-edit', account.id]" *ngIf="account.id!=null">Edit</a>
+        <!-- </h3> -->
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <button mat-fab color="primary" [routerLink]="['/account-add']">Add</button>
+</mat-card>
